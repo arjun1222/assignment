@@ -1,0 +1,276 @@
+
+
+import React, { Component } from 'react';
+
+export class App extends Component {
+ constructor(props){
+   super (props)
+   this.state={
+     region:"",
+     model:"",
+     submodel:"",
+     orderId:"",
+     itemId:"",
+     recipeId:"",
+     parentLink:"",
+     childLink:""
+   }
+
+
+  
+   this.handleChangeRegion = this.handleChangeRegion.bind(this);
+
+   this.handleChangeModel = this.handleChangeModel.bind(this);
+
+   this.handleChangeOrderId = this.handleChangeOrderId.bind(this);
+
+   this.handleChangeItemId = this.handleChangeItemId.bind(this);
+
+   this.handleChangeRecipeId = this.handleChangeRecipeId.bind(this);
+
+   this.handleChangeSubmodel=this.handleChangeSubmodel.bind(this);
+
+   this.clickSubmit=this.clickSubmit.bind(this)
+ }
+ 
+
+ handleChangeRegion(e) {
+   
+  console.log("Region Selected!!");
+  this.setState({ region: e.target.value });
+}
+
+
+clickSubmit(e){
+console.log("I am here", this.state)
+const region=this.state.region
+const model=this.state.model
+const submodel=this.state.submodel
+const parentLink="";
+const childLink="";
+if(region=="US"){
+  parentLink="https://www.vans.com"
+}
+else if(region=="CA_EN"){
+  parentLink="https://www.vans.ca"
+}
+else if(region=="CA_FR"){
+  parentLink="https://www.vans.ca/fr_ca/"
+}
+else if(region =="UK"){
+  parentLink="https://www.vans.co.uk"
+}
+else if(region =="FR"){
+  parentLink="https://www.vans.fr"
+}
+else if(region =="DE"){
+  parentLink="https://www.vans.de"
+}
+else if(region=="NL"){
+  parentLink="https://www.vans.nl"
+}
+else if(region=="IT"){
+  parentLink= "https://www.vans.it"
+}
+else if(region=="IE"){
+  parentLink="https://www.vans.ie"
+}
+else if(region =="AT"){
+  parentLink="https://www.vans.at"
+}
+else if(region=="DK"){
+  parentLink="https://www.vans.eu"
+}
+else if(region=="ES"){
+  parentLink="https://www.vans.es"
+}
+else if(region=="SE"){
+  parentLink="https://www.vans.se"
+}
+else if(region=="LU")
+{
+parentLink="https://www.vans.lu"
+}
+else if (region =="BE")
+{
+  parentLink="https://www.vans.be"
+}
+else if(region=="CN"){
+  parentLink="https://vans.com.cn"
+}
+else if(region=="KR"){
+  parentLink="https://shop.vans.co.kr/"
+}
+
+if(model=="slipon"){
+  if(submodel=="classic"){
+    childLink="/customizer.comfycush-slip-on.html"
+  }
+  else if(submodel=="skate"){
+    childLink="/customizer.skate-slip-on.html"
+  }
+  else if(submodel=="pet"){
+    childLink="/customizer.slip-on-recycled-materials.html"
+  }
+  else if(submodel=="wide"){
+    childLink="/customizer.slip-on-classic-wide.html"
+  }
+  else if(submodel=="platform"){
+    childLink="/customizer.slip-on-classic-platform.html"
+  }
+}
+this.setState({ parentLink: parentLink });
+
+this.setState({ childLink: childLink });
+
+
+}
+
+
+
+}
+handleChangeModel(e) {
+  console.log("Model Selected!!");
+  this.setState({ model: e.target.value });
+}
+
+handleChangeSubmodel(e) {
+  console.log("Submodel Selected!!");
+  this.setState({ model: e.target.value });
+}
+
+
+handleChangeOrderId(e) {
+  console.log("Model Selected!!");
+  this.setState({ orderId: e.target.value });
+}
+
+handleChangeRecipeId(e) {
+  console.log("recipe Selected!!");
+  this.setState({ recipeId: e.target.value });
+}
+
+handleChangeItemId(e) {
+  console.log("item Selected!!");
+  this.setState({ itemId: e.target.value });
+}
+
+
+  render() {
+    const {region} =this.state
+    const {model} =this.state
+
+    const {orderId} =this.state
+
+    const {recipeId} =this.state
+
+    const {itemId} =this.state
+    return (
+      <div>
+
+
+    <div>
+    <select value ={this.state.region} onChange={this.handleChangeRegion}>
+        <option value="US">US</option>
+        <option value="CA_EN">CA_EN</option>
+        <option value="CA_FR">CA_FR</option>
+        <option value="UK">UK</option>
+
+        <option value="FR">FR</option>
+        <option value="DE">DE</option>
+        <option value="NL">NL</option>
+        <option value="IT">IT</option>
+
+        <option value="IE">IE</option>
+        <option value="AT">AT</option>
+        <option value="DK">DK</option>
+        <option value="ES">ES</option>
+
+        <option value="SE">SE</option>
+        <option value="LU">LU</option>
+        <option value="BE">BE</option>
+
+        <option value="CN">CN</option>
+        <option value="KR">KR</option>
+      </select>
+    </div>
+      
+<div>
+<select value ={this.state.model} onChange={this.handleChangeModel}  >
+        <option value="slipon">Slip-on</option>
+        <option value="oldskool">Old skool</option>
+        <option value="sk8hi">Sk8-hi</option>
+        
+        <option value="authentic">authentic</option>
+        <option value="era">era</option>
+        <option value="evdnt">evdnt</option>
+
+        <option value="ultrarange">ultrarange</option>
+        <option value="backpack">backpack</option>
+        <option value="sk8hi">Sk8-hi</option>
+      </select> 
+</div>
+
+
+<div>
+<select value ={this.state.model} onChange={this.handleChangeSubModel}  >
+        <option value="classic">classic</option>
+        <option value="comfycush">comfycush</option>
+        <option value="skate">skate</option>
+        
+        <option value="pet">pet</option>
+        <option value="wide">wide</option>
+        <option value="platform">platform</option>
+
+      </select> 
+</div>
+
+<div>
+
+
+<input
+        type="text"
+        value={this.state.orderId}
+        placeholder="enter order id"
+        onChange={this.handleChangeOrderId}
+      />
+</div>
+
+<div>
+<input
+        type="text"
+        value={this.state.itemId}
+        placeholder="enter item id"
+        onChange={this.handleChangeItemId}
+      />
+
+</div>
+<div>
+<input
+        type="text"
+        value={this.state.recipeId}
+        placeholder="enter recipe id"
+        onChange={this.handleChangeRecipeId}
+      />
+</div>
+
+
+
+
+<button onClick={this.clickSubmit}>
+  Get Link
+</button>
+
+<p>{parentLink}{childLink}</p>
+
+<p>customs.vans.factoryui.com/{orderId}/{recipeId}/{itemId}</p>
+ </div>
+
+
+    );
+    
+  }
+
+}
+
+export default App;
