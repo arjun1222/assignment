@@ -1,14 +1,12 @@
-
-
 import React, { Component } from 'react';
 
 export class App extends Component {
  constructor(props){
    super (props)
    this.state={
-     region:"",
-     model:"",
-     submodel:"",
+     region:"US",
+     model:"slipon",
+     submodel:"classic",
      orderId:"",
      itemId:"",
      recipeId:"",
@@ -41,94 +39,188 @@ export class App extends Component {
 }
 
 
+
 clickSubmit(e){
-console.log("I am here", this.state)
-const region=this.state.region
-const model=this.state.model
-const submodel=this.state.submodel
-const parentLink="";
-const childLink="";
-if(region=="US"){
-  parentLink="https://www.vans.com"
-}
-else if(region=="CA_EN"){
-  parentLink="https://www.vans.ca"
-}
-else if(region=="CA_FR"){
-  parentLink="https://www.vans.ca/fr_ca/"
-}
-else if(region =="UK"){
-  parentLink="https://www.vans.co.uk"
-}
-else if(region =="FR"){
-  parentLink="https://www.vans.fr"
-}
-else if(region =="DE"){
-  parentLink="https://www.vans.de"
-}
-else if(region=="NL"){
-  parentLink="https://www.vans.nl"
-}
-else if(region=="IT"){
-  parentLink= "https://www.vans.it"
-}
-else if(region=="IE"){
-  parentLink="https://www.vans.ie"
-}
-else if(region =="AT"){
-  parentLink="https://www.vans.at"
-}
-else if(region=="DK"){
-  parentLink="https://www.vans.eu"
-}
-else if(region=="ES"){
-  parentLink="https://www.vans.es"
-}
-else if(region=="SE"){
-  parentLink="https://www.vans.se"
-}
-else if(region=="LU")
-{
-parentLink="https://www.vans.lu"
-}
-else if (region =="BE")
-{
-  parentLink="https://www.vans.be"
-}
-else if(region=="CN"){
-  parentLink="https://vans.com.cn"
-}
-else if(region=="KR"){
-  parentLink="https://shop.vans.co.kr/"
-}
+    console.log("I am here", this.state)
+    const region=this.state.region
+    const model=this.state.model
+    const submodel=this.state.submodel
+    var parentLink="";
+    var childLink="";
+    if(region==="US"){
+      parentLink="https://www.vans.com"
+    }
+    else if(region==="CA_EN"){
+      parentLink="https://www.vans.ca"
+    }
+    else if(region==="CA_FR"){
+      parentLink="https://www.vans.ca/fr_ca/"
+    }
+    else if(region ==="UK"){
+      parentLink="https://www.vans.co.uk"
+    }
+    else if(region ==="FR"){
+      parentLink="https://www.vans.fr"
+    }
+    else if(region ==="DE"){
+      parentLink="https://www.vans.de"
+    }
+    else if(region==="NL"){
+      parentLink="https://www.vans.nl"
+    }
+    else if(region==="IT"){
+      parentLink= "https://www.vans.it"
+    }
+    else if(region==="IE"){
+      parentLink="https://www.vans.ie"
+    }
+    else if(region ==="AT"){
+      parentLink="https://www.vans.at"
+    }
+    else if(region==="DK"){
+      parentLink="https://www.vans.eu"
+    }
+    else if(region==="ES"){
+      parentLink="https://www.vans.es"
+    }
+    else if(region==="SE"){
+      parentLink="https://www.vans.se"
+    }
+    else if(region==="LU")
+    {
+    parentLink="https://www.vans.lu"
+    }
+    else if (region ==="BE")
+    {
+      parentLink="https://www.vans.be"
+    }
+    else if(region==="CN"){
+      parentLink="https://vans.com.cn"
+    }
+    else if(region==="KR"){
+      parentLink="https://shop.vans.co.kr/"
+    }
+    
+    if(model==="slipon"){
+      if(submodel==="classic"){
+        childLink="/customizer.slip-on-classic.html"
+      }
+      else if(submodel==="comfycush"){
+        childLink="/customizer.comfycush-slip-on.html"
+        }
+      else if(submodel==="skate"){
+        childLink="/customizer.skate-slip-on.html"
+      }
+      else if(submodel==="pet"){
+        childLink="/customizer.slip-on-recycled-materials.html"
+      }
+      else if(submodel==="wide"){
+        childLink="/customizer.slip-on-classic-wide.html"
+      }
+      else if(submodel==="platform"){
+        childLink="/customizer.slip-on-classic-platform.html"
+      }
+    }
+    else if(model==="oldskool"){
+        if(submodel==="classic"){
+          childLink="/customizer.old-skool-classic.html"
+        }
+        else if(submodel==="comfycush"){
+          childLink="/customizer.comfycush-old-skool.html"
+          }
+        else if(submodel==="skate"){
+          childLink="/customizer.skate-old-skool.html"
+        }
+        else if(submodel==="pet"){
+          childLink="/customizer.old-skool-recycled-materials.html"
+        }
+        else if(submodel==="platform"){
+          childLink="/customizer.old-skool-classic-platform.html"
+        }
+        else if(submodel==="mte"){
+            childLink="/customizer.mte-old-skool.html"
+          }
+      }
+      else if(model==="sk8hi"){
+        if(submodel==="classic"){
+          childLink="/customizer.sk8-hi.html"
+        }
+        else if(submodel==="comfycush"){
+          childLink="/customizer.comfycush-sk8-hi.html"
+          }
+        else if(submodel==="skate"){
+          childLink="/customizer.skate-sk8-hi.html"
+        }
+        else if(submodel==="pet"){
+          childLink="/customizer.sk8-hi-recycled-materials.html"
+        }
+        else if(submodel==="mte"){
+            childLink="/customizer.mte-sk8-hi.html"
+          }
+      }
+      else if(model==="authentic"){
+        if(submodel==="classic"){
+          childLink="/customizer.authentic-classic.html"
+        }
+        else if(submodel==="comfycush"){
+          childLink="/customizer.comfycush-authentic.html"
+          }
+        else if(submodel==="skate"){
+          childLink="/customizer.skate-authentic.html"
+        }
+        else if(submodel==="pet"){
+          childLink="/customizer.authentic-recycled-materials.html"
+        }
+        else if(submodel==="wide"){
+            childLink="/customizer.authentic-classic-wide.html"
+          }
+      }
+      else if(model==="era"){
+        if(submodel==="classic"){
+          childLink="/customizer.era-classic.html"
+        }
+        else if(submodel==="comfycush"){
+          childLink="/customizer.comfycush-era.html"
+          }
+        else if(submodel==="skate"){
+          childLink="/customizer.skate-era.html"
+        }
+        else if(submodel==="pet"){
+          childLink="/customizer.era-recycled-materials.html"
+        }
+      
+        else if(submodel==="mte"){
+            childLink="/customizer.mte-era.html"
+          }
+      }
 
-if(model=="slipon"){
-  if(submodel=="classic"){
-    childLink="/customizer.comfycush-slip-on.html"
-  }
-  else if(submodel=="skate"){
-    childLink="/customizer.skate-slip-on.html"
-  }
-  else if(submodel=="pet"){
-    childLink="/customizer.slip-on-recycled-materials.html"
-  }
-  else if(submodel=="wide"){
-    childLink="/customizer.slip-on-classic-wide.html"
-  }
-  else if(submodel=="platform"){
-    childLink="/customizer.slip-on-classic-platform.html"
-  }
-}
-this.setState({ parentLink: parentLink });
+      else if(model==="evdnt"){
+        if(submodel==="classic"){
+          childLink="/customizer.evdnt.html"
+        }
+      }
+      else if(model==="ultrarange"){
+        if(submodel==="classic"){
+          childLink="/customizer.ultrarange-exo.html"
+        }
+      }
 
-this.setState({ childLink: childLink });
+      else if(model==="backpack"){
+        if(submodel==="classic"){
+          childLink="/customizer.backpack.html"
+        }
+      }
+
+ 
+    this.setState({ parentLink: parentLink });
+    
+    this.setState({ childLink: childLink });
+    
+    
+    }
 
 
-}
 
-
-
-}
 handleChangeModel(e) {
   console.log("Model Selected!!");
   this.setState({ model: e.target.value });
@@ -136,7 +228,7 @@ handleChangeModel(e) {
 
 handleChangeSubmodel(e) {
   console.log("Submodel Selected!!");
-  this.setState({ model: e.target.value });
+  this.setState({ submodel: e.target.value });
 }
 
 
@@ -159,6 +251,10 @@ handleChangeItemId(e) {
   render() {
     const {region} =this.state
     const {model} =this.state
+
+    const {parentLink}=this.state
+
+    const {childLink}=this.state
 
     const {orderId} =this.state
 
@@ -213,7 +309,7 @@ handleChangeItemId(e) {
 
 
 <div>
-<select value ={this.state.model} onChange={this.handleChangeSubModel}  >
+<select value ={this.state.model} onChange={this.handleChangeSubmodel}  >
         <option value="classic">classic</option>
         <option value="comfycush">comfycush</option>
         <option value="skate">skate</option>
@@ -221,6 +317,8 @@ handleChangeItemId(e) {
         <option value="pet">pet</option>
         <option value="wide">wide</option>
         <option value="platform">platform</option>
+        <option value="mte">mte</option>
+
 
       </select> 
 </div>
